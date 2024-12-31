@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mon Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section id="about" class="py-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="me.jpg" alt="Avatar" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <h2>À propos de moi</h2>
+                    <p>J'ai Aymen Oudich, j'ai 19 ans, il a eu san bac en 2024 on science physique.</p>
+                    <p>Je joue au football avec l'Association du Club de Chabab Nahda.</p>
+                    <p>Je suis formatrice au sein de l'Association de Chabab Nahda pour les petits et intermédiaires groupes de moins de 18 ans.</p>
+                    <p>J'ai gagné trois titres pour avoir récité le Saint Coran.</p>
+                    <p>Pendant mon temps libre, j'aime jouer au football et aussi regarder des séries telles que des dessins animés et des actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Mes Projets</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="img.jpg" class="card-img-top" alt="PIE">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrepreneuriat PIE</h5>
+                            <p class="card-text">Projet de stade de football</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="skitch.jpg" class="card-img-top" alt="skitch">
+                        <div class="card-body">
+                            <h5 class="card-title">Sketch</h5>
+                            <p class="card-text">Croquis drôle</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="player.jpg" class="card-img-top" alt="Player">
+                        <div class="card-body">
+                            <h5 class="card-title">Player</h5>
+                            <p class="card-text">joueur de football</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-5 text-center">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="d-flex justify-content-center">
+                <form class="w-50 p-4 bg-light rounded shadow-sm">
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom :</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Votre nom">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email :</label>
+                        <input type="email" class="form-control" id="email" placeholder="Votre email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message :</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Votre message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-dark text-white py-4">
+        <div class="text-center">
+            <p>&copy; 2024 Mon Portfolio - Tous droits réservés</p>
+        <div class="text-center"></div>
+    </footer>
+</body>
+</html>
