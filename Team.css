@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+background-color: orangered;
+color: white;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-sizing: border-box;
+}
+
+header h1{
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 55px;
+    max-width: 400px;
+    margin: 0;
+}
+
+header .image{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+header .image img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+header nav {
+    color: white;
+    align-items: center;
+    display: flex;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    gap: 5px;
+}
+
+header nav ul li{
+    margin-right: 10px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.75s;
+}
+
+header nav ul li a:hover{
+    text-decoration: underline;
+    color: rgb(87, 60, 11);
+}
+
+section .container .row .col-md-4 .card img{
+    transition: transform 0.5s;
+}
+
+section .container .row .col-md-4 .card img:hover{
+    transform: scale(1.1);
+}
+
+footer {
+    background: orangered;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+@media screen and (max-width: 900px) {
+    header{
+        background-color: orangered;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .header{
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .header .image{
+        flex-direction: column;
+    }
+    
+    .header .image img{
+        max-width: 80px;
+    }
+
+    header nav ul{
+        align-items: center;
+    }
+
+    header nav ul li a{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    header{
+        background-color: orangered;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .header{
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .header .image{
+        flex-direction: column;
+    }
+    
+    .header .image img{
+        max-width: 60px;
+    }
+
+    header h1{
+        font-size: 30px;
+        max-width: 300px;
+    }
+
+    header nav ul{
+        align-items: center;
+    }
+
+    header nav ul li a{
+        font-size: 7px;
+    }
+    
+    .imgteam img{
+        max-width: 80%;
+    }
+}

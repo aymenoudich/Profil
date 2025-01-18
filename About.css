@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+background-color: orangered;
+color: white;
+padding: 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+box-sizing: border-box;
+}
+
+header h1{
+    text-align: left;
+    box-sizing: border-box;
+    font-size: 55px;
+    max-width: 400px;
+    margin: 0;
+}
+
+header .image{
+    align-items: center;
+    display: flex;
+    gap: 20px;
+}
+
+header .image img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+header nav {
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+header nav ul{
+    margin-bottom: 0;
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+header nav ul li{
+    margin-right: 10px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: 0.75s;
+}
+
+header nav ul li a:hover{
+    text-decoration: underline;
+    color: rgb(87, 60, 11);
+}
+
+section .image .logo{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+}
+
+section .image .logo .img{
+    max-width: 100%;
+    height: auto;
+}
+
+section .image .about{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+section .image .about h2{
+    color: orangered;
+}
+
+section .image .about h3{
+    color: orange;
+}
+
+footer {
+    background: orangered;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+}
+
+footer p{
+    text-align: center;
+    box-sizing: border-box;
+}
+
+footer .socite-midia{
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+footer .socite-midia a img{
+    width: 30px;
+    height: 30px;
+    transition: trasform 0.3s ease;
+    justify-content: right;
+}
+
+footer .socite-midia a img:hover{
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 900px) {
+    header{
+        background-color: orangered;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .header{
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .header .image{
+        flex-direction: column;
+    }
+    
+    .header .image img{
+        max-width: 80px;
+    }
+
+    header nav ul{
+        align-items: center;
+    }
+
+    header nav ul li a{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 400px){
+    header{
+        background-color: orangered;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .header{
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .header .image{
+        flex-direction: column;
+    }
+    
+    .header .image img{
+        max-width: 60px;
+    }
+
+    header h1{
+        font-size: 30px;
+        max-width: 300px;
+    }
+
+    header nav ul{
+        align-items: center;
+    }
+
+    header nav ul li a{
+        font-size: 7px;
+    }
+    
+    .imgteam img{
+        max-width: 80%;
+    }
+}
