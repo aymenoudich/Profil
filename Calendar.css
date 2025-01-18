@@ -72,6 +72,11 @@ th, td {
     border: 1px solid orangered;
     padding: 10px;
     text-align: center;
+    transition: .4s ease;
+}
+
+td:hover{
+    background-color: orange;
 }
   
 th{
