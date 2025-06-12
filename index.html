@@ -1,120 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Chabab Nahda</title>
+    <title>Calcul Mental</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="image">
-            <img src="download.jpeg" alt="logo">
-            <h1>Chabab Nahda</h1>
+    <div class="container">
+        <h1>Calcul Mental</h1>
+        <div class="timer">Temps: <span id="time">0</span>s</div>
+        <div class="operation" id="operation"></div>
+        <input type="number" id="answer" placeholder="Votre réponse...">
+        <button id="validate">Valider</button>
+        <div class="result" id="result"></div>
+        <div class="score">
+            Score: <span id="score">0</span> | 
+            Meilleur score: <span id="best-score">0</span>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Team.html">Team</a></li>
-                <li><a href="News.html">News</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
-                <li><a href="Calendar.html">Calendar</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section class="hero">
-        <h2>Welcome to our Club Chabab Nahda Association</h2>
-        <p>Join us to share your passion for football!</p>
-    </section>
-    <div class="imgteam">
-        <img src="cb1.jpg" alt="slayder">
     </div>
-    <main>
-        <section id="matchs" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-4">Upcoming Matches</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="matchday1.jpg" class="card-img-top" alt="match">
-                            <div class="card-body">
-                                <h5 class="card-title">Chabab Nahda VS Chabab El atlas Kenitra</h5>
-                                <p class="card-text">01/17/2025. Stade bouknadal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="matchtomorrow.jpg" class="card-img-top" alt="match">
-                            <div class="card-body">
-                                <h5 class="card-title">Chabab Nahda VS F.C Club Sebaayoune</h5>
-                                <p class="card-text">01/28/2025. Stade bouknadal</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="matchtwo.jpg" class="card-img-top" alt="match">
-                            <div class="card-body">
-                                <h5 class="card-title">Chabab Nahda VS Farah Casablanca</h5>
-                                <p class="card-text">02/05/2025. Stade bouknadal</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="news" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-4">Latest News</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="match.jpg" class="card-img-top" alt="new">
-                            <div class="card-body">
-                                <p class="card-text">Chabab Nahda Association defeated Ajial Ain Al Awda Club</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="aymenoudich.jpg" class="card-img-top" alt="new">
-                            <div class="card-body">
-                                <p class="card-text">Player Aymen Oudich suffered a knee sprain and may be out of action for a month.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="capi.jpg" class="card-img-top" alt="new">
-                            <div class="card-body">
-                                <p class="card-text">The loss of the Club Chabab Nahda Association against the Kaby team</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <p>© 2025 Chabab Nahda. All rights reserved.</p>
-        <div class="socite-midia">
-            <a href="https://www.facebook.com/athlentique.sekou?mibextid=ZbWKwL" target="_blank" aria-label="facebook">
-                <img src="facebook-removebg-preview.png" alt="facebook">
-            </a>
-            <a href="https://www.instagram.com/chababnahdarabat?igsh=MXZuMWJia2l2aWw3bQ==" target="_blank" aria-label="instagram">
-                <img src="instagram-removebg-preview.png" alt="instagram">
-            </a>
-            <a href="https://www.tiktok.com/@chababnahdaraba?_t=ZM-8t7n7T8qaOb&_r=1" target="_blank" aria-label="tiktok">
-                <img src="tiktok-removebg-preview.png" alt="tiktok">
-            </a>
-            <a href="https://youtube.com/@fcchababnahdarabat8596?si=REHQsvunOqkC1BV4" target="_blank" aria-label="youtube">
-                <img src="youtube-removebg-preview.png" alt="youtube">
-            </a>
-        </div>
-    </footer>
+
+    <script>
+        // Variables
+        let score = 0;
+        let bestScore = localStorage.getItem('bestScore') || 0;
+        let startTime;
+        let timerInterval;
+        
+        // Éléments DOM
+        const operationElement = document.getElementById('operation');
+        const answerInput = document.getElementById('answer');
+        const validateButton = document.getElementById('validate');
+        const resultElement = document.getElementById('result');
+        const scoreElement = document.getElementById('score');
+        const bestScoreElement = document.getElementById('best-score');
+        const timeElement = document.getElementById('time');
+        
+        // Initialisation
+        bestScoreElement.textContent = bestScore;
+        generateOperation();
+        startTimer();
+        
+        // Génère une opération aléatoire
+        function generateOperation() {
+            const operations = ['+', '-', '*', '/'];
+            const operation = operations[Math.floor(Math.random() * operations.length)];
+            
+            let num1, num2, result;
+            
+            switch(operation) {
+                case '+':
+                    num1 = Math.floor(Math.random() * 50) + 1;
+                    num2 = Math.floor(Math.random() * 50) + 1;
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    num1 = Math.floor(Math.random() * 50) + 1;
+                    num2 = Math.floor(Math.random() * num1) + 1;
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    num1 = Math.floor(Math.random() * 10) + 1;
+                    num2 = Math.floor(Math.random() * 10) + 1;
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    num2 = Math.floor(Math.random() * 10) + 1;
+                    result = Math.floor(Math.random() * 10) + 1;
+                    num1 = num2 * result;
+                    break;
+            }
+            
+            operationElement.textContent = `${num1} ${operation} ${num2} = ?`;
+            operationElement.dataset.result = result;
+            
+            answerInput.value = '';
+            answerInput.focus();
+        }
+        
+        // Vérifie la réponse
+        function checkAnswer() {
+            const userAnswer = parseFloat(answerInput.value);
+            const correctAnswer = parseFloat(operationElement.dataset.result);
+            
+            if (isNaN(userAnswer)) {
+                resultElement.textContent = "Veuillez entrer un nombre valide";
+                resultElement.className = "result incorrect";
+                return;
+            }
+            
+            if (Math.abs(userAnswer - correctAnswer) < 0.0001) { // Tolérance pour les divisions
+                resultElement.textContent = "Correct!";
+                resultElement.className = "result correct";
+                score++;
+                scoreElement.textContent = score;
+                
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestScoreElement.textContent = bestScore;
+                    localStorage.setItem('bestScore', bestScore);
+                }
+            } else {
+                resultElement.textContent = `Incorrect! La réponse était ${correctAnswer}`;
+                resultElement.className = "result incorrect";
+                score = 0;
+                scoreElement.textContent = score;
+            }
+            
+            setTimeout(() => {
+                resultElement.textContent = '';
+                generateOperation();
+            }, 1500);
+        }
+        
+        // Gestion du timer
+        function startTimer() {
+            startTime = Date.now();
+            timerInterval = setInterval(() => {
+                const elapsedTime = Math.floor((Date.now() - startTime) / 1000);
+                timeElement.textContent = elapsedTime;
+            }, 1000);
+        }
+        
+        // Événements
+        validateButton.addEventListener('click', checkAnswer);
+        
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                checkAnswer();
+            }
+        });
+    </script>
 </body>
 </html>
